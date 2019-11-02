@@ -6,9 +6,12 @@
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
-                    <div class="breadcrumb-content">
-                        <h2>Chủ tịch Hội đồng họ Trương Việt Nam Trương Văn Đoan người giương cao ngọn cờ đoàn kết, kết nối dòng tộc</h2>
-                    </div>
+                        @foreach ($data as $item)
+                        <div class="breadcrumb-content">
+                        <h2>{{$item->tieude}}</h2>
+                            </div>
+                        @endforeach
+                 
                 </div>
             </div>
         </div>
@@ -19,25 +22,25 @@
                 <!-- Post Details Content Area -->
                 <div class="col-12 col-xl-8">
                     @foreach ($data as $item)
-                        
-                    @endforeach
                     <div class="post-details-content bg-white mb-30 p-30 box-shadow">
-                        <div class="blog-thumb mb-30">
-                            <img src={{$item->anhgioithieu}} alt="" width="100%">
-                        </div>
-                        <div class="blog-content">
-                            <div class="post-meta">
-                         
-
+                            <div class="blog-thumb mb-30">
+                                <img src={{$item->anhgioithieu}} alt="" width="100%">
                             </div>
-                            <h3 class="post-title">{{$item->tieude}}</h3>
-                            <!-- Post Meta -->
-                            <div id="contentDetail">
-                                    <p>{!! $item->noidung !!}</p>
+                            <div class="blog-content">
+                                <div class="post-meta">
+                             
+    
+                                </div>
+                                <h3 class="post-title">{{$item->tieude}}</h3>
+                                <!-- Post Meta -->
+                                <div id="contentDetail">
+                                        <p>{!! $item->noidung !!}</p>
+                                </div>
+    
                             </div>
-
                         </div>
-                    </div>
+                    @endforeach
+                    
 
 
                 </div>
@@ -55,60 +58,19 @@
                             </div>
 
                             <!-- Single YouTube Channel -->
+                            @foreach ($datalq as $item)
                             <div class="single-youtube-channel d-flex">
-                                <div class="youtube-channel-thumbnail">
-                                    <img src="{{ asset('/public/img/news2.jpg')}}" alt="" height="80px">
+                                    <div class="youtube-channel-thumbnail">
+                                        <img src={{$item->anhgioithieu}} alt="" height="80px">
+                                    </div>
+                                    <div class="youtube-channel-content">
+                                        <a href="/noidung/{{$item->id}}" class="channel-title">{{$item->tieude}}</a>
+                                        <a href="/noidung/{{$item->id}}" class="btn subscribe-btn">CHI TIẾT</a>
+                                    </div>
                                 </div>
-                                <div class="youtube-channel-content">
-                                    <a href="single-post.html" class="channel-title">Hội đồng họ Trương Quảng Nam – Đà Nẵng thăm viếng gia đình Anh Trương Văn Được</a>
-                                    <a href="#" class="btn subscribe-btn">CHI TIẾT</a>
-                                </div>
-                            </div>
-                            <div class="single-youtube-channel d-flex">
-                                <div class="youtube-channel-thumbnail">
-                                    <img src="{{ asset('/public/img/news2.jpg')}}" alt="" height="80px">
-                                </div>
-                                <div class="youtube-channel-content">
-                                    <a href="single-post.html" class="channel-title">Hội đồng họ Trương Quảng Nam – Đà Nẵng thăm viếng gia đình Anh Trương Văn Được</a>
-                                    <a href="#" class="btn subscribe-btn">CHI TIẾT</a>
-                                </div>
-                            </div>
-                            <div class="single-youtube-channel d-flex">
-                                <div class="youtube-channel-thumbnail">
-                                    <img src="{{ asset('/public/img/news2.jpg')}}" alt="" height="80px">
-                                </div>
-                                <div class="youtube-channel-content">
-                                    <a href="single-post.html" class="channel-title">Hội đồng họ Trương Quảng Nam – Đà Nẵng thăm viếng gia đình Anh Trương Văn Được</a>
-                                    <a href="#" class="btn subscribe-btn">CHI TIẾT</a>
-                                </div>
-                            </div>
-                            <div class="single-youtube-channel d-flex">
-                                <div class="youtube-channel-thumbnail">
-                                    <img src="{{ asset('/public/img/news2.jpg')}}" alt="" height="80px">
-                                </div>
-                                <div class="youtube-channel-content">
-                                    <a href="single-post.html" class="channel-title">Hội đồng họ Trương Quảng Nam – Đà Nẵng thăm viếng gia đình Anh Trương Văn Được</a>
-                                    <a href="#" class="btn subscribe-btn">CHI TIẾT</a>
-                                </div>
-                            </div>
-                            <div class="single-youtube-channel d-flex">
-                                <div class="youtube-channel-thumbnail">
-                                    <img src="{{ asset('/public/img/news2.jpg')}}" alt="" height="80px">
-                                </div>
-                                <div class="youtube-channel-content">
-                                    <a href="single-post.html" class="channel-title">Hội đồng họ Trương Quảng Nam – Đà Nẵng thăm viếng gia đình Anh Trương Văn Được</a>
-                                    <a href="#" class="btn subscribe-btn">CHI TIẾT</a>
-                                </div>
-                            </div>
-                            <div class="single-youtube-channel d-flex">
-                                <div class="youtube-channel-thumbnail">
-                                    <img src="{{ asset('/public/img/news2.jpg')}}" alt="" height="80px">
-                                </div>
-                                <div class="youtube-channel-content">
-                                    <a href="single-post.html" class="channel-title">Hội đồng họ Trương Quảng Nam – Đà Nẵng thăm viếng gia đình Anh Trương Văn Được</a>
-                                    <a href="#" class="btn subscribe-btn">CHI TIẾT</a>
-                                </div>
-                            </div>
+                            @endforeach
+                            
+                           
 
 
                         </div>

@@ -8,9 +8,8 @@ class noidungcontroller extends Controller
 {
     public function shownoidung($id1){
         $data= DB::table('tintuc')->where('id',$id1)->get();
-        return view('mainPage.single-post')->with('data',$data);
-
-     
-
+        $datalq= DB::table('tintuc')->inRandomOrder()->take(4)->get();
+        return view('mainPage.single-post',['data'=>$data],['datalq'=>$datalq]);
     }
+ 
 }

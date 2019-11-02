@@ -47,7 +47,9 @@ CREATE TABLE `husband` (
   `birthday` date,
   `dayavoided` date,
   `note` text,
-  `id_branch` int(11) NOT NULL
+  `id_branch` int(11) NOT NULL,
+  `username` text NOT NULL,
+  `userpass` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -172,16 +174,16 @@ INSERT INTO `branch` (`id`,`sect`,`branch`,`life`) VALUES
 --
 -- dữ liệu bảng user
 --
-INSERT INTO `husband` (`id`,`name`,`birthday`,`dayavoided`,`note`,`id_branch`) VALUES
-(NULL,'TRƯƠNG VĂN HUỆ',NULL,'2019-6-27','Mộ tại Vân Quật tư điền',1),
-(NULL,'TRƯƠNG VĂN TÀI',NULL,'2019-9-23','Mộ tại Vân Quật tư điền',2),
-(NULL,'TRƯƠNG VĂN LỰC',NULL,'2019-8-22','Con trưởng ông Tài, mộ tại Quảng Đại tư thổ',3),
-(NULL,'TRƯƠNG VĂN LƯỢNG',NULL,'2019-5-26','Con thứ hai của ông Tài, mộ tại Quảng Đại công điền',4),
-(NULL,'TRƯƠNG VĂN SỨC',NULL,'2019-6-2','Con trưởng của Ông Lực, mộ tại Quảng Đại công điền',5),
-(NULL,'TRƯƠNG VĂN KHỎE',NULL,'2019-7-27','Con thứ hai của Ông Lực, mộ tại Quảng Đại công điền',5),
-(NULL,'TRƯƠNG VĂN PHIÊN',NULL,'2019-1-14','Con thứ ba đời nhỏ của Ông Lực, mộ tại Quảng Đại',5),
-(NULL,'TRƯƠNG VĂN LANG',NULL,'2019-6-16','Con trưởng Ông Lượng, mộ tại Quảng Đại',6),
-(NULL,'TRƯƠNG VĂN CHƯ',NULL,'2019-7-4','Con thứ 4 của Ông Lượng, mộ tại Quảng Đại. Có cuốn gia phả ghi ông THƯ',6); 
+INSERT INTO `husband` (`id`,`name`,`birthday`,`dayavoided`,`note`,`id_branch`,`username`,`userpass`) VALUES
+(NULL,'TRƯƠNG VĂN HUỆ',NULL,'2019-6-27','Mộ tại Vân Quật tư điền',1,'truongvanhue','27062019'),
+(NULL,'TRƯƠNG VĂN TÀI',NULL,'2019-9-23','Mộ tại Vân Quật tư điền',2,'truongvantai','23092019'),
+(NULL,'TRƯƠNG VĂN LỰC',NULL,'2019-8-22','Con trưởng ông Tài, mộ tại Quảng Đại tư thổ',3,'truongvanluc','22082019'),
+(NULL,'TRƯƠNG VĂN LƯỢNG',NULL,'2019-5-26','Con thứ hai của ông Tài, mộ tại Quảng Đại công điền',4,'truongvanluong','26052019'),
+(NULL,'TRƯƠNG VĂN SỨC',NULL,'2019-6-2','Con trưởng của Ông Lực, mộ tại Quảng Đại công điền',5,'truongvansuc','02062019'),
+(NULL,'TRƯƠNG VĂN KHỎE',NULL,'2019-7-27','Con thứ hai của Ông Lực, mộ tại Quảng Đại công điền',5,'truongvankhoe','27072019'),
+(NULL,'TRƯƠNG VĂN PHIÊN',NULL,'2019-1-14','Con thứ ba đời nhỏ của Ông Lực, mộ tại Quảng Đại',5,'truongvanphien','14012019'),
+(NULL,'TRƯƠNG VĂN LANG',NULL,'2019-6-16','Con trưởng Ông Lượng, mộ tại Quảng Đại',6,'truongvanlang','16062019'),
+(NULL,'TRƯƠNG VĂN CHƯ',NULL,'2019-7-4','Con thứ 4 của Ông Lượng, mộ tại Quảng Đại. Có cuốn gia phả ghi ông THƯ',6,'truongvanchu','04072019'); 
 --
 -- dữ liệu bảng wife
 --
@@ -280,7 +282,7 @@ VALUES
                                 <p dir="ltr" style="text-align:center"><em><span style="font-size:16px">Ninh Bình, ngày 16 tháng 10 năm 2019</span></em></p>
 
                                 <p style="text-align:center"><em><span style="font-size:16px">&nbsp; Trương Ngọc Anh</span></em></p>'),
-                                ('Hội nghị Báo cáo công tác xây dựng nhà thờ họ Trương Việt Nam','Ngày 21 tháng 9 năm 2019 tại làng Đa Giá, thị trấn Thiên Tôn, huyện Hoa Lư, Ninh Bình hội đồng họ Trương Việt Nam tổ chức hội nghị báo cáo công tác xây dựng nhà thờ họ Trương Việt Nam.','public/img/news3.jpg','<div id="contentDetail"><p style="text-align:center"><br>
+                                ('Hội nghị Báo cáo công tác xây dựng nhà thờ họ Trương Việt Nam','Ngày 21 tháng 9 năm 2019 tại làng Đa Giá, thị trấn Thiên Tôn, huyện Hoa Lư, Ninh Bình hội đồng họ Trương Việt Nam tổ chức hội nghị báo cáo công tác xây dựng nhà thờ họ Trương Việt Nam.','/public/img/news3.jpg','<div id="contentDetail"><p style="text-align:center"><br>
 <img alt="" src="http://truongtoc.com.vn/public/uploads/images/tin_hoat_dong/ha001.jpg" style="height:493px; width:877px"></p>
 
 <p style="text-align:center"><em><span style="font-size:12.0pt"><span style="color:#222222">Toàn cảnh nhà thờ họ Trương Việt Nam đang xây dựng</span></span></em></p>
@@ -402,7 +404,7 @@ VALUES
 <p style="text-align:justify">&nbsp;</p>
 
 <p style="text-align:justify">&nbsp;</p></div>'),
-('Hội đồng họ Trương Quảng Nam – Đà Nẵng thăm viếng gia đình Anh Trương Văn Được','Người dân thôn Mỹ Cang, xã Tam Thăng, TP Tam Kỳ, tỉnh Quảng Nam vô cùng tiếc thương và cảm kích trước tinh thần quên thân để lo cứu giúp tính mạng bà con của Anh dân quân tự về Trương Văn Được.','public/img/news2.jpg','<div id="contentDetail"><p style="text-align:center"><span style="font-size:16px"><img alt="" src="http://truongtoc.com.vn/public/uploads/images/a26.jpg" style="height:438px; width:660px"></span></p>
+('Hội đồng họ Trương Quảng Nam – Đà Nẵng thăm viếng gia đình Anh Trương Văn Được','Người dân thôn Mỹ Cang, xã Tam Thăng, TP Tam Kỳ, tỉnh Quảng Nam vô cùng tiếc thương và cảm kích trước tinh thần quên thân để lo cứu giúp tính mạng bà con của Anh dân quân tự về Trương Văn Được.','/public/img/news2.jpg','<div id="contentDetail"><p style="text-align:center"><span style="font-size:16px"><img alt="" src="http://truongtoc.com.vn/public/uploads/images/a26.jpg" style="height:438px; width:660px"></span></p>
 
 <p style="text-align:justify"><span style="font-size:16px"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:#222222">Người dân thôn Mỹ Cang, xã Tam Thăng, TP Tam Kỳ, tỉnh Quảng Nam vô cùng tiếc thương và cảm kích trước tinh thần quên thân để lo cứu giúp tính mạng bà con của Anh dân quân tự về Trương Văn Được.</span></span></span></p>
 
@@ -429,7 +431,7 @@ VALUES
 <p style="text-align:right"><span style="font-size:16px"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:#222222">TRƯƠNG HỒNG SƠN - QN ĐN</span></span></span></p>
 
 <p style="text-align:justify">&nbsp;</p></div>'),
-('Hội đồng họ Trương Việt Nam thông qua đồ án thiết kế hệ thống điện nước nhà thờ','Ngày 5 tháng 7 năm 2019, tại công trình xây dựng nhà thờ họ Trương Việt Nam, Hội đồng họ Trương Việt Nam đã tổ chức buổi họp nghe giải trình  đồ án thiết kế hệ thống cung cấp điện, nước cho khu vực nhà thờ','public/img/news4.jpg','<div id="contentDetail"><p style="text-align:justify"><span style="font-size:16px"><strong><em>Tin xây dựng</em></strong></span></p>
+('Hội đồng họ Trương Việt Nam thông qua đồ án thiết kế hệ thống điện nước nhà thờ','Ngày 5 tháng 7 năm 2019, tại công trình xây dựng nhà thờ họ Trương Việt Nam, Hội đồng họ Trương Việt Nam đã tổ chức buổi họp nghe giải trình  đồ án thiết kế hệ thống cung cấp điện, nước cho khu vực nhà thờ','/public/img/news4.jpg','<div id="contentDetail"><p style="text-align:justify"><span style="font-size:16px"><strong><em>Tin xây dựng</em></strong></span></p>
 
 <p style="text-align:justify"><span style="font-size:16px"><strong><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em></strong><strong>HỘI ĐỒNG HỌ TRƯƠNG VIỆT NAM&nbsp;</strong></span><span style="font-size:16px"><strong>THÔNG QUA&nbsp; ĐỒ ÁN THIẾT KẾ HỆ THỐNG ĐIỆN NƯỚC</strong></span><span style="font-size:16px"><strong>&nbsp;NHÀ THỜ</strong></span></p>
 
@@ -466,7 +468,7 @@ VALUES
 <p style="text-align:justify"><span style="font-size:16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>Ninh Bình, ngày 6 tháng 7 năm 2019</em></span></p>
 
 <p style="text-align:justify"><span style="font-size:16px"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; </em><strong>Trương Ngọc Vui</strong></span></p></div>'),
-('Công tác chuẩn bị tổ chức Lễ Thượng Lương nhà thờ họ Trương Việt Nam','Ngày 15/12/2018 hội đồng họ Trương Việt Nam họp bàn về tiến độ xây dựng nhà thờ và công tác chuẩn bị cho ngày lễ cất nóc nhà thờ họ Trương Việt Nam tại Thị Trấn Thiên Tôn - Hoa Lư - Ninh Bình.','public/img/news.jpg','<div id="contentDetail"><p style="text-align:center"><img alt="" src="http://truongtoc.com.vn/public/uploads/images/tin_hoat_dong/capnhatxdnthtvn/a11.jpg" style="height:534px; width:960px"></p>
+('Công tác chuẩn bị tổ chức Lễ Thượng Lương nhà thờ họ Trương Việt Nam','Ngày 15/12/2018 hội đồng họ Trương Việt Nam họp bàn về tiến độ xây dựng nhà thờ và công tác chuẩn bị cho ngày lễ cất nóc nhà thờ họ Trương Việt Nam tại Thị Trấn Thiên Tôn - Hoa Lư - Ninh Bình.','/public/img/news.jpg','<div id="contentDetail"><p style="text-align:center"><img alt="" src="http://truongtoc.com.vn/public/uploads/images/tin_hoat_dong/capnhatxdnthtvn/a11.jpg" style="height:534px; width:960px"></p>
 
 <p style="text-align:justify"><span style="font-size:13.0pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="color:#222222">Ngày 15/12/2018 hội đồng họ Trương Việt Nam họp bàn về tiến độ xây dựng nhà thờ và công tác chuẩn bị cho ngày lễ cất nóc nhà thờ họ Trương Việt Nam tại Thị Trấn Thiên Tôn - Hoa Lư - Ninh Bình.</span></span></span></p>
 
