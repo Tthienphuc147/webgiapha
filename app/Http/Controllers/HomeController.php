@@ -1,14 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 
 
 class HomeController extends Controller
 {
     public function showHome()
     {
-        return view('mainPage.home');
+        $tintucrandom=DB::table('tintuc')->inRandomOrder()->take(1)->get();
+        $tintuc=DB::table('tintuc')->get();
+        return view('mainPage.home',['tintucrandom' => $tintucrandom],['tintuc' => $tintuc]);
     }
     public function showSinglePost()
     {
