@@ -3228,7 +3228,7 @@ textarea.form-control {
     position: absolute;
     top: 0;
     right: 50%;
-    border-top: 1px solid #ccc;
+    border-top: 4px solid #ccc;
     width: 50%;
     height: 20px;
 }
@@ -3236,7 +3236,7 @@ textarea.form-control {
 .tree li::after {
     right: auto;
     left: 50%;
-    border-left: 1px solid #ccc;
+    border-left: 4px solid #ccc;
     
 }
 
@@ -3263,7 +3263,7 @@ right connector from last child*/
 /*Adding back the vertical connector to the last nodes*/
 
 .tree li:last-child::before {
-    border-right: 1px solid #ccc;
+    border-right: 4px solid #ccc;
     border-radius: 0 5px 0 0;
     -webkit-border-radius: 0 5px 0 0;
     -moz-border-radius: 0 5px 0 0;
@@ -3283,7 +3283,7 @@ right connector from last child*/
     position: absolute;
     top: 0;
     left: 50%;
-    border-left: 1px solid #ccc;
+    border-left: 4px solid #ccc;
     width: 0;
     height: 20px;
 }
