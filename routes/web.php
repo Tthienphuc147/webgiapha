@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'HomeController@showHome');
-Route::get('/category', 'HomeController@showCategory');
+Route::get('/category', 'noidungcontroller@showcategory');
 Route::get('/post', 'HomeController@showSinglePost');
 Route::get('/login', 'HomeController@showLogin');
 Route::get('/giapha/{id}', 'GiaPhaController@showGiaPha');

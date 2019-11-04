@@ -26,109 +26,28 @@
                 <div class="archive-posts-area bg-white p-30 mb-30 box-shadow">
 
                     <!-- Single Catagory Post -->
+                    @foreach ($data as $item)
                     <div class="single-catagory-post d-flex flex-wrap">
                         <!-- Thumbnail -->
-                        <div class="post-thumbnail bg-img" style="background-image: url({{ asset('/public/img/news1.jpg')}});">
+                        <div class="post-thumbnail bg-img" style="background-image: url({{$item->anhgioithieu}});">
 
                         </div>
 
                         <!-- Post Contetnt -->
                         <div class="post-content">
-                            <div class="post-meta">
+                            {{-- <div class="post-meta">
                                 <a href="#">18 THÁNG 10, 2019</a>
-                            </div>
-                            <a href="" class="post-title">Chủ tịch Hội đồng họ Trương Việt Nam Trương Văn Đoan người giương cao ngọn cờ đoàn kết, kết nối dòng tộc</a>
+                            </div> --}}
+                        <a href="" class="post-title">{{$item->tieude}}</a>
                             <!-- Post Meta -->
 
-                            <p>Chủ tịch Hội đồng họ Trương Việt Nam Trương Văn Đoan nguyên là lãnh đạo cao cấp của Chính phủ nước Cộng hòa xã hội chủ nghĩa Việt Nam</p>
+                            <p>{{$item->tomtat}}</p>
                         </div>
                     </div>
-                    <div class="single-catagory-post d-flex flex-wrap">
-                        <!-- Thumbnail -->
-                        <div class="post-thumbnail bg-img" style="background-image: url({{ asset('/public/img/news1.jpg')}});">
-
-                        </div>
-
-                        <!-- Post Contetnt -->
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#">18 THÁNG 10, 2019</a>
-                            </div>
-                            <a href="" class="post-title">Chủ tịch Hội đồng họ Trương Việt Nam Trương Văn Đoan người giương cao ngọn cờ đoàn kết, kết nối dòng tộc</a>
-                            <!-- Post Meta -->
-
-                            <p>Chủ tịch Hội đồng họ Trương Việt Nam Trương Văn Đoan nguyên là lãnh đạo cao cấp của Chính phủ nước Cộng hòa xã hội chủ nghĩa Việt Nam</p>
-                        </div>
-                    </div>
-                    <div class="single-catagory-post d-flex flex-wrap">
-                        <!-- Thumbnail -->
-                        <div class="post-thumbnail bg-img" style="background-image: url({{ asset('/public/img/news1.jpg')}});">
-
-                        </div>
-
-                        <!-- Post Contetnt -->
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#">18 THÁNG 10, 2019</a>
-                            </div>
-                            <a href="" class="post-title">Chủ tịch Hội đồng họ Trương Việt Nam Trương Văn Đoan người giương cao ngọn cờ đoàn kết, kết nối dòng tộc</a>
-                            <!-- Post Meta -->
-
-                            <p>Chủ tịch Hội đồng họ Trương Việt Nam Trương Văn Đoan nguyên là lãnh đạo cao cấp của Chính phủ nước Cộng hòa xã hội chủ nghĩa Việt Nam</p>
-                        </div>
-                    </div>
-                    <div class="single-catagory-post d-flex flex-wrap">
-                        <!-- Thumbnail -->
-                        <div class="post-thumbnail bg-img" style="background-image: url({{ asset('/public/img/news1.jpg')}});">
-
-                        </div>
-
-                        <!-- Post Contetnt -->
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#">18 THÁNG 10, 2019</a>
-                            </div>
-                            <a href="" class="post-title">Chủ tịch Hội đồng họ Trương Việt Nam Trương Văn Đoan người giương cao ngọn cờ đoàn kết, kết nối dòng tộc</a>
-                            <!-- Post Meta -->
-
-                            <p>Chủ tịch Hội đồng họ Trương Việt Nam Trương Văn Đoan nguyên là lãnh đạo cao cấp của Chính phủ nước Cộng hòa xã hội chủ nghĩa Việt Nam</p>
-                        </div>
-                    </div>
-                    <div class="single-catagory-post d-flex flex-wrap">
-                        <!-- Thumbnail -->
-                        <div class="post-thumbnail bg-img" style="background-image: url({{ asset('/public/img/news1.jpg')}});">
-
-                        </div>
-
-                        <!-- Post Contetnt -->
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#">18 THÁNG 10, 2019</a>
-                            </div>
-                            <a href="" class="post-title">Chủ tịch Hội đồng họ Trương Việt Nam Trương Văn Đoan người giương cao ngọn cờ đoàn kết, kết nối dòng tộc</a>
-                            <!-- Post Meta -->
-
-                            <p>Chủ tịch Hội đồng họ Trương Việt Nam Trương Văn Đoan nguyên là lãnh đạo cao cấp của Chính phủ nước Cộng hòa xã hội chủ nghĩa Việt Nam</p>
-                        </div>
-                    </div>
-                    <div class="single-catagory-post d-flex flex-wrap">
-                        <!-- Thumbnail -->
-                        <div class="post-thumbnail bg-img" style="background-image: url({{ asset('/public/img/news1.jpg')}});">
-
-                        </div>
-
-                        <!-- Post Contetnt -->
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#">18 THÁNG 10, 2019</a>
-                            </div>
-                            <a href="" class="post-title">Chủ tịch Hội đồng họ Trương Việt Nam Trương Văn Đoan người giương cao ngọn cờ đoàn kết, kết nối dòng tộc</a>
-                            <!-- Post Meta -->
-
-                            <p>Chủ tịch Hội đồng họ Trương Việt Nam Trương Văn Đoan nguyên là lãnh đạo cao cấp của Chính phủ nước Cộng hòa xã hội chủ nghĩa Việt Nam</p>
-                        </div>
-                    </div>
-
+                    @endforeach
+                   
+           
+                    
 
 
                     <!-- Pagination -->

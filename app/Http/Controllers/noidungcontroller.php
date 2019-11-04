@@ -11,5 +11,9 @@ class noidungcontroller extends Controller
         $datalq= DB::table('tintuc')->inRandomOrder()->take(4)->get();
         return view('mainPage.single-post',['data'=>$data],['datalq'=>$datalq]);
     }
+    public function showcategory(){
+        $data=DB::table('tintuc')->get();
+        return view('mainPage.category')->with('data',$data);
+    }
  
 }

@@ -9,59 +9,7 @@
         <!-- >>>>>>>>>>>>>>>>>>>>
          Post Left Sidebar Area
         <<<<<<<<<<<<<<<<<<<<< -->
-        <div class="post-sidebar-area left-sidebar mt-30 mb-30 bg-white box-shadow">
-            <!-- Sidebar Widget -->
-            <div class="single-sidebar-widget p-30">
-                <!-- Section Title -->
-                <div class="section-heading">
-                    <h5>Thông báo</h5>
-                </div>
-
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="{{ asset('/public/img/tb.png')}}" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">Thông báo ngày giỗ ông A</a>
-                    </div>
-                </div>
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="{{ asset('/public/img/tb.png')}}" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">Thông báo ngày giỗ ông A</a>
-                    </div>
-                </div>
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="{{ asset('/public/img/tb.png')}}" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">Thông báo ngày giỗ ông A</a>
-                    </div>
-                </div>
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="{{ asset('/public/img/tb.png')}}" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">Thông báo ngày giỗ ông A</a>
-                    </div>
-                </div>
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="{{ asset('/public/img/tb.png')}}" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">Thông báo ngày giỗ ông A</a>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-
+  
         <!-- >>>>>>>>>>>>>>>>>>>>
              Main Posts Area
         <<<<<<<<<<<<<<<<<<<<< -->
@@ -83,7 +31,7 @@
                             @foreach ($tintucrandom as $item)
                             <div class="single-featured-post">
                                 <!-- Thumbnail -->
-                                <div class="post-thumbnail mb-50" ">
+                                <div class="post-thumbnail mb-50" >
                                     <a href="/noidung/{{$item->id}} "> <img src={{$item->anhgioithieu}} alt=" " width="650px "></a>
 
 

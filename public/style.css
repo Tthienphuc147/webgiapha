@@ -942,6 +942,8 @@ input:focus {
     position: relative;
     z-index: 1;
     padding: 0 15px;
+    justify-content: center;
+ 
 }
 
 .post-sidebar-area {
@@ -1006,8 +1008,7 @@ input:focus {
     flex: 0 0 calc(100% - 360px);
     max-width: calc(100% - 360px);
     width: calc(100% - 360px);
-    margin-left: 15px;
-    margin-right: 15px;
+
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1499px) {
@@ -3289,7 +3290,7 @@ right connector from last child*/
 }
 
 .tree li a {
-    border: 1px solid #ccc;
+    border: 3px solid #ccc;
     padding: 5px 10px;
     text-decoration: none;
     color: #666;
@@ -3326,7 +3327,7 @@ right connector from last child*/
 .tree li a:hover, .tree li a:hover+ul li a {
     background: #c8e4f8b6;
     color: #000;
-    border: 1px solid #94a0b4;
+    border: 3px solid #94a0b4;
 }
 
 /*Connector styles on hover*/

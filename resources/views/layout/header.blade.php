@@ -32,7 +32,7 @@
                                     <li class="active"><a href="/">Trang chủ</a></li>
                                     <li><a href="/">Giới thiệu</a></li>
                                     <li><a href="/category">Tin tức</a></li>
-                                    <li><a href="/">Thông báo</a></li>
+                                
                                     <li><a href="/giapha/1">Gia phả</a></li>
 
                                 </ul>
