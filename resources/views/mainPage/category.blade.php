@@ -38,7 +38,7 @@
                             {{-- <div class="post-meta">
                                 <a href="#">18 THÁNG 10, 2019</a>
                             </div> --}}
-                        <a href="" class="post-title">{{$item->tieude}}</a>
+                        <a href="/noidung/{{$item->id}}" class="post-title">{{$item->tieude}}</a>
                             <!-- Post Meta -->
 
                             <p>{{$item->tomtat}}</p>
