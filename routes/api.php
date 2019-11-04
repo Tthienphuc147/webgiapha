@@ -20,5 +20,6 @@ Route::apiResource('husband', 'ApiHusBandController');
 Route::apiResource('wife', 'ApiWifeController');
 Route::apiResource('children', 'ApiChildrenController');
 Route::apiResource('giapha', 'ApiGiaPhaController');
+Route::apiResource('login','ApiLoginController');
 
 

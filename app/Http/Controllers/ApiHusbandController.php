@@ -12,7 +12,9 @@ class ApiHusbandController extends Controller
     public function show($id)
     {
         $husband=DB::table('husband')->where('id',$id)->get();
-
-        return response()->json($husband, Response::HTTP_OK);
+        $status=array('isSuccess'=>"True");
+        $statuss=array('status'=>$status);
+        $husbands=array('husband'=>$husband);
+        return response()->json([$statuss,$husbands], Response::HTTP_OK);
     }
 }
