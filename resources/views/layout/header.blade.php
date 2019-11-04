@@ -7,7 +7,7 @@
                 <nav class="classy-navbar justify-content-between" id="magNav">
 
                     <!-- Nav brand -->
-                    <a href="index.html" class="nav-brand">
+                    <a href="/" class="nav-brand">
                         <h2>TỘC TRƯƠNG VĂN</h2>
                         <h3>Làng Lang Châu,Duy Phước,Duy Xuyên,Quảng Nam</h3>
                     </a>
@@ -33,7 +33,7 @@
                                     <li><a href="/">Giới thiệu</a></li>
                                     <li><a href="/category">Tin tức</a></li>
                                     <li><a href="/">Thông báo</a></li>
-                                    <li><a href="/giapha">Gia phả</a></li>
+                                    <li><a href="/giapha/1">Gia phả</a></li>
 
                                 </ul>
                             </div>

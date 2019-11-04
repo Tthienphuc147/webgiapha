@@ -3175,10 +3175,29 @@ textarea.form-control {
 /*GIAPHA*/
 
 /*Now the CSS*/
+.logo1{
+    text-align: center;
+}
+.logo1 img{
+    width:700px;
+    
 
+}
 .tree {
     padding-bottom: 100px;
     padding-top: 20px;
+}
+.tree .main-name{
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(243, 31, 31);
+    margin-bottom: 5px;
+}
+.tree .child-name{
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+   
 }
 
 .tree ul {
@@ -3199,6 +3218,7 @@ textarea.form-control {
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
+   
 }
 
 /*We will use ::before and ::after to draw the connectors*/
@@ -3217,6 +3237,7 @@ textarea.form-control {
     right: auto;
     left: 50%;
     border-left: 1px solid #ccc;
+    
 }
 
 /*We need to remove left-right connectors from elements without 
@@ -3246,6 +3267,7 @@ right connector from last child*/
     border-radius: 0 5px 0 0;
     -webkit-border-radius: 0 5px 0 0;
     -moz-border-radius: 0 5px 0 0;
+    
 }
 
 .tree li:first-child::after {
@@ -3280,7 +3302,21 @@ right connector from last child*/
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
-    height:150px;
+    min-width: 200px;
+    min-height: 150px;
+
+}
+.tree li a  .listchildren{
+  display: none;
+
+}
+.tree li a:hover .listchildren{
+    display: block;
+  
+}
+.tree li a:hover a{
+    height: 200px;
+  
 }
 
 /*Time for some hover effects*/
@@ -3288,7 +3324,7 @@ right connector from last child*/
 /*We will apply the hover effect the the lineage of the element also*/
 
 .tree li a:hover, .tree li a:hover+ul li a {
-    background: #c8e4f8;
+    background: #c8e4f8b6;
     color: #000;
     border: 1px solid #94a0b4;
 }
@@ -3301,4 +3337,7 @@ right connector from last child*/
 
 .tree-parent {
     margin: 0 auto;
+}
+.dropdown-item{
+    width: 202px;
 }

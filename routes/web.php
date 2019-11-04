@@ -15,5 +15,5 @@ Route::get('/', 'HomeController@showHome');
 Route::get('/category', 'HomeController@showCategory');
 Route::get('/post', 'HomeController@showSinglePost');
 Route::get('/login', 'HomeController@showLogin');
-Route::get('/giapha', 'GiaPhaController@showGiaPha');
+Route::get('/giapha/{id}', 'GiaPhaController@showGiaPha');
 route::get('/noidung/{id}','noidungcontroller@shownoidung');

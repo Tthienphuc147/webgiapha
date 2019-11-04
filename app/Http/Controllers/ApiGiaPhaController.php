@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
+use App\Models\Product;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 
-class GiaPhaController extends Controller
+class ApiGiaPhaController extends Controller
 {
-
-    public function showGiaPha($id)
+    public function show($id)
     {
         $branch=DB::table('branch')->distinct()->get(['life']);
         $husband=DB::table('husband')->where('id',$id)->get();
@@ -61,17 +63,12 @@ class GiaPhaController extends Controller
 
             
         }
-        
-        
-     return view('mainPage.giapha')->with('branch',$branch)->with('husband',$husband)->with('husband1',$husband1)
-     ->with('children1',$children1)->with('listchildren1',$listchildren1)
-     ->with('arr2',$arr2)->with('listchildren2',$listchildren2)
-     ->with('arr3',$arr3)->with('listchildren3',$listchildren3)
-     ->with('arr4',$arr4)->with('listchildren4',$listchildren4)
-     ->with('arr5',$arr5)
-     ->with('listchildren5',$listchildren5)
-     ->with('arrwife',$arrwife)->with('arrwife1',$arrwife1)->with('arrwife2',$arrwife2)->with('arrwife3',$arrwife3)->with('arrwife4',$arrwife4)->with('arrwife5',$arrwife5);
+        $arrayHusBand1 = array('Husband-The first' =>$husband );
+        $arrayChildren1 = array('Children-The first' => $children1);
+        $arrayWife1=array('Wife-The first'=>$arrwife);
+        return response()->json([$arrayHusBand1,$arrayChildren1,$arrayWife1,
+        $listchildren1,
+        $arr2,$listchildren2,$arr3,$listchildren3,$arr4,$listchildren4,$arr5,$listchildren5], Response::HTTP_OK);
+       
     }
- 
-
 }
