@@ -63,12 +63,24 @@ class ApiGiaPhaController extends Controller
 
             
         }
-        $arrayHusBand1 = array('Husband-The first' =>$husband );
-        $arrayChildren1 = array('Children-The first' => $children1);
-        $arrayWife1=array('Wife-The first'=>$arrwife);
-        return response()->json([$arrayHusBand1,$arrayChildren1,$arrayWife1,
-        $listchildren1,
-        $arr2,$listchildren2,$arr3,$listchildren3,$arr4,$listchildren4,$arr5,$listchildren5], Response::HTTP_OK);
+        $arrayHusBand1 = array('Husband-The 1' =>$husband );
+        $arrayChildren1 = array('Children-The 1' => $listchildren1);
+        $arrayWife1=array('Wife-The 1'=>$arrwife);
+        $arrayHusBand2 = array('Husband-The 2' =>$children1 );
+        $arrayChildren2 = array('Children-The 2' => $listchildren2);
+        $arrayWife2=array('Wife-The 2'=>$arrwife2);
+        $arrayHusBand3 = array('Husband-The 3' =>$arr2 );
+        $arrayChildren3 = array('Children-The 3' => $listchildren3);
+        $arrayWife3=array('Wife-The 3'=>$arrwife3);
+        $arrayHusBand4 = array('Husband-The 4' =>$arr3 );
+        $arrayChildren4 = array('Children-The 4' => $listchildren4);
+        $arrayWife4=array('Wife-The 5'=>$arrwife4);
+        $arrayHusBand5 = array('Husband-The 5' =>$arr4 );
+        $arrayChildren5 = array('Children-The 5' => $listchildren5);
+        $arrayWife5=array('Wife-The 5'=>$arrwife5);
+        return response()->json([$arrayHusBand1,$arrayChildren1,$arrayWife1,$arrayHusBand2,$arrayChildren2,$arrayWife2,
+        $arrayHusBand3,$arrayChildren3,$arrayWife3,$arrayHusBand4,$arrayChildren4,$arrayWife4,
+        $arrayHusBand5,$arrayChildren5,$arrayWife5], Response::HTTP_OK);
        
     }
 }
