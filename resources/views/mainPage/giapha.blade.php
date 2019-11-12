@@ -38,7 +38,7 @@
                             <ul>
                            
                             <li class="tree-parent">
-                                    <a href="#" >
+                                    <a href="#"  style="min-height:100px;">
                                             
                                     <p class="main-name">{{$husband[0]->name}}</p>
                             
@@ -66,7 +66,7 @@
                                         @endphp
                                         
                                         <li>
-                                                <a href="#">
+                                                <a href="#" style="min-height:100px;">
                                             
                                                 <p class="main-name"> {{$child->name}}</>
                                                 @foreach ($arrwife2[$i] as $item)
@@ -150,21 +150,40 @@
                                                                                           @endphp
                                                                                             
                                                                                                 <li>
-                                                                                                        <a href="#">
+                                                                                                    @if (sizeof($listchildren5[$i][$j][$k][$l])===0)
+                                                                                                    <a href="#"  style="min-height:200px;">
                                                                 
-                                                                                                                <p class="main-name">{{$arrchild4->name}}</>
-                                                                                                                @foreach ($arrwife5[$i][$j][$k][$l] as $item)
-                                                    
-                                                                                                                <p class="main-name">VỢ:{{$item->name}} kỵ:{{ date_format(date_create($item->dayavoided),'d').'-'.date_format(date_create($item->dayavoided),'m') }}</>
-                                                                                                        @endforeach
-                                                                                                        <div class="listchildren">
-                                                                                                                <hr>
-                                                                                                                @foreach ($listchildren5[$i][$j][$k][$l]  as $key=>$child)   
-                                                                                                            <p class="child-name">{{$key+1}}.{{$child->name}}</>
-                                                                                                        @endforeach
-                                                                                                        </div> 
-                                                                                                                    
-                                                                                                                </a>
+                                                                                                            <p class="main-name">{{$arrchild4->name}}</>
+                                                                                                            @foreach ($arrwife5[$i][$j][$k][$l] as $item)
+                                                
+                                                                                                            <p class="main-name">VỢ:{{$item->name}} kỵ:{{ date_format(date_create($item->dayavoided),'d').'-'.date_format(date_create($item->dayavoided),'m') }}</>
+                                                                                                    @endforeach
+                                                                                                    <div class="listchildren">
+                                                                                                            <hr>
+                                                                                                            @foreach ($listchildren5[$i][$j][$k][$l]  as $key=>$child)   
+                                                                                                        <p class="child-name">{{$key+1}}.{{$child->name}}</>
+                                                                                                    @endforeach
+                                                                                                    </div> 
+                                                                                                                
+                                                                                                            </a>
+                                                                                                    @else
+                                                                                                    <a href="#">
+                                                                
+                                                                                                            <p class="main-name">{{$arrchild4->name}}</>
+                                                                                                            @foreach ($arrwife5[$i][$j][$k][$l] as $item)
+                                                
+                                                                                                            <p class="main-name">VỢ:{{$item->name}} kỵ:{{ date_format(date_create($item->dayavoided),'d').'-'.date_format(date_create($item->dayavoided),'m') }}</>
+                                                                                                    @endforeach
+                                                                                                    <div class="listchildren">
+                                                                                                            <hr>
+                                                                                                            @foreach ($listchildren5[$i][$j][$k][$l]  as $key=>$child)   
+                                                                                                        <p class="child-name">{{$key+1}}.{{$child->name}}</>
+                                                                                                    @endforeach
+                                                                                                    </div> 
+                                                                                                                
+                                                                                                            </a>
+                                                                                                    @endif
+                                                                                                      
                                                                                                                
                                                                                                 </li>
                                                                                                 @endforeach 
