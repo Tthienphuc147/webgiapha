@@ -8,8 +8,8 @@
 
                     <!-- Nav brand -->
                     <a href="/" class="nav-brand">
-                        <h2>TỘC TRƯƠNG VĂN</h2>
-                        <h3>Làng Lang Châu,Duy Phước,Duy Xuyên,Quảng Nam</h3>
+                        <h2>TỘC NGUYỄN VĂN</h2>
+
                     </a>
 
                     <!-- Navbar Toggler -->

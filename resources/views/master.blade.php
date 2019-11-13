@@ -6,9 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" href="{{ asset('/img/1.png')}}" type="image/x-icon" />
-
-   <title>Tộc Trương Văn</title>
+    <link rel="icon" href="{{ asset('/public/img/1.png')}}" type="image/x-icon" />
+   <title>Tộc Nguyễn Văn</title>
 
 
     <!-- Extra plugin css -->
