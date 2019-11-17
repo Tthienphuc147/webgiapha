@@ -2,6 +2,7 @@
 @section('content')
 <div class="jumbotron">
     <h1 >Quản lý tin tức</h1>
+    <div  class="addBtn"> <i class="fa fa-plus"  style="padding: 5px;color:#fff"></i><span style="color:#fff">Thêm bài viết</span></div>
     <div class="content">
         <table class="table table-bordered">
             <thead>
@@ -23,8 +24,9 @@
                   <td><img src={{$item->anhgioithieu}} alt="" width="200px"></td>
                   <td>
                     <div style="display:flex;flex-direction:column">
-                       <div style="display:flex;align-items: center;padding:5px"> <i class="fa fa-plus" style="padding: 5px"></i><span>Thêm bài viết</span></div>
+
                        <div style="display:flex;align-items: center;padding:5px"> <i class="fa fa-edit" style="padding: 5px"></i><span>Sửa bài viết</span></div>
+                       <div style="display:flex;align-items: center;padding:5px"> <i class="fa fa-trash" style="padding: 5px"></i><span>Xóa bài viết</span></div>
                     </div>
                    
                   </td>

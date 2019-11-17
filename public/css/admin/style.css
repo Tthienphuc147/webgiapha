@@ -229,4 +229,28 @@
 	 -webkit-animation-name: swing;
 	 animation-name: swing;
 }
+ .addBtn{
+	 padding: 5px;
+	 background-color: #8f1209;
+	 width: 150px;
+	 margin: 10px 0px;
+	 border-radius: 3px;
+	 border:1px solid  #8f1209;
+	 box-shadow: #eee;
+ }
+
+ .addBtn1{
+	padding: 5px;
+	background-color: #8f1209;
+	width: 200px;
+	margin: 10px 10px;
+	border-radius: 3px;
+	border:1px solid  #8f1209;
+	box-shadow: #eee;
+	text-align: center;
+}
+.addBtn1 a{
+	text-decoration: none;
+}
+
  
