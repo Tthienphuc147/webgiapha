@@ -9,7 +9,8 @@ class AccountController extends Controller
     public function LoginAuth(Request $request){
         $username = $request->input('username');
         $pass=$request->input('password');
-        $data=DB::table('account')->join('husband', 'account.id', '=', 'husband.id_account')->where('username',$username)->get();
+        $data=DB::table('account')->join('husband', 'account.id', '=', 'husband.id_account')
+        ->where('username',$username)->select('username','role','name','password','husband.id as id_husband')->get();
         $this->validate($request,
             [
                 'username' => 'required',
@@ -22,14 +23,16 @@ class AccountController extends Controller
                 'password.max' => 'Mật Khẩu gồm tối đa 32 ký tự!'
             ]);
                 $success=false;
+
             foreach($data as $item) {
                 if($pass == $item->password){
                     $request->session()->put('login', true);
-                    $request->session()->put('id', $item->id);
+                    $request->session()->put('id', $item->id_husband);
                     $request->session()->put('namelogin', $item->username);
                     $request->session()->put('name',$item->name);
                     $request->session()->put('role', $item->role);
-                    return redirect('/admin');
+                    var_dump($data);
+                    // return redirect('/admin');
                     $success=true;
                     break;
                 }
