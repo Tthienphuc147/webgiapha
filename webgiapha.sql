@@ -48,8 +48,7 @@ CREATE TABLE `husband` (
   `dayavoided` date,
   `note` text,
   `id_branch` int(11) NOT NULL,
-  `username` text NOT NULL,
-  `userpass` text NOT NULL
+  `id_account` int(11)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -94,6 +93,14 @@ CREATE TABLE `tintuc` (
   `noidung` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS `account`;
+CREATE TABLE `account` (
+  `id` int(11) NOT NULL,
+  `username` text NOT NULL,
+  `password` text NOT NULL,
+  `role` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 -- Chỉ mục cho các bảng đã đổ
 --
@@ -123,7 +130,8 @@ ALTER TABLE `wife`
   ADD PRIMARY KEY (`id`);
 ALTER TABLE `tintuc`
   ADD PRIMARY KEY (`id`);
-
+ALTER TABLE `account`
+  ADD PRIMARY KEY (`id`);
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
@@ -153,13 +161,14 @@ ALTER TABLE `wife`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `tintuc`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+ALTER TABLE `account`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- thêm dữ liệu cho các bảng
 --
 -- dữ liệu bảng branch
 --
-INSERT INTO `branch` (`id`,`sect`,`branch`,`life`) VALUES 
+INSERT INTO `branch` (`id`,`sect`,`branch`,`life`) VALUES
 (NULL,'','',1),
 (NULL,'','',2),
 (NULL,'NHẤT','',3),
@@ -174,24 +183,36 @@ INSERT INTO `branch` (`id`,`sect`,`branch`,`life`) VALUES
 --
 -- dữ liệu bảng user
 --
-INSERT INTO `husband` (`id`,`name`,`birthday`,`dayavoided`,`note`,`id_branch`,`username`,`userpass`) VALUES
-(NULL,'NGUYỄN VĂN HƯNG',NULL,'2019-6-27','Mộ tại Vân Quật tư điền',1,'nguyenvanhung','27062019'),
-(NULL,'NGUYỄN VĂN TỘC',NULL,'2019-9-23','Mộ tại Vân Quật tư điền',2,'nguyenvantoc','23092019'),
-(NULL,'NGUYỄN VĂN LƯỚNG',NULL,'2019-8-22','Con trưởng ông Tài, mộ tại Quảng Đại tư thổ',3,'nguyenvanluong','22082019'),
-(NULL,'NGUYỄN VĂN LỪNG',NULL,'2019-5-26','Con thứ hai của ông Tài, mộ tại Quảng Đại công điền',4,'nguyenvanlung','26052019'),
-(NULL,'NGUYỄN VĂN SU',NULL,'2019-6-2','Con trưởng của Ông Lực, mộ tại Quảng Đại công điền',5,'nguyenvansu','02062019'),
-(NULL,'NGUYỄN VĂN KHOA',NULL,'2019-7-27','Con thứ hai của Ông Lực, mộ tại Quảng Đại công điền',5,'nguyenvankhoa','27072019'),
-(NULL,'NGUYỄN VĂN PHÚC',NULL,'2019-1-14','Con thứ ba đời nhỏ của Ông Lực, mộ tại Quảng Đại',5,'nguyenvanphuc','14012019'),
-(NULL,'NGUYỄN VĂN LÂM',NULL,'2019-6-16','Con trưởng Ông Lượng, mộ tại Quảng Đại',6,'nguyenvanlam','16062019'),
-(NULL,'NGUYỄN VĂN CHỨA',NULL,'2019-7-4','Con thứ 4 của Ông Lượng, mộ tại Quảng Đại. Có cuốn gia phả ghi ông THƯ',6,'nguyenvanchua','04072019'),
-(NULL,'NGUYỄN VĂN ĐẠI',NULL,'2019-8-21','Con thứ hai của Ông Sức, mộ tại Quảng Đại',7,'nguyenvandai','21082019'),
-(NULL,'NGUYỄN VĂN ĐÚNG',NULL,'2019-1-29','Con thứ hai của Ông Sức, mộ tại Quảng Đại',7,'nguyenvandung','29012019'),
-(NULL,'NGUYỄN VĂN THU',NULL,'2019-3-17','Con thứ tư ông Khỏe, mộ tại Quảng Đại công điền',7,'nguyenvanthu','17032019'),
-(NULL,'NGUYỄN VĂN TRUNG',NULL,'2019-1-5','Con thứ năm của ông Khỏe, mộ tại Quảng Đại',7,'nguyenvantrung','05012019'),
-(NULL,'NGUYỄN VĂN TỬ',NULL,'2019-8-5','Con thứ nhất của ông Phiên, mộ tại Quảng Đại',7,'nguyenvantu','05082019'),
-(NULL,'NGUYỄN VĂN ĐẠI',NULL,'2019-8-25','Con thứ ba đời nhỏ của Ông Phiên, mộ tại Quảng Đại. Thuộc chi đàng Ông Quế',7,'nguyenvandai','25082019'),
-(NULL,'NGUYỄN VĂN LONG',NULL,'2019-12-29','Con thứ tư đời nhỏ của Ông Phiên, mộ tại Quảng Đại',7,'nguyenvanlong','29122019'),
-(NULL,'NGUYỄN VĂN THÂN',NULL,'2019-1-28','Con trưởng của ông Chư, mộ tại Muông Hạ',8,'nguyenvanthan','28012019');
+INSERT INTO `account` (`id`,`username`, `password`,`role`) VALUES
+(NULL,'nguyenvanhung','27062019','user'),
+(NULL,'nguyenvantoc','23092019','user'),
+(NULL,'nguyenvanluong','22082019','user'),
+(NULL,'nguyenvanlung','26052019','user'),
+(NULL,'nguyenvansu','02062019','user'),
+(NULL,'nguyenvankhoa','27072019','admin');
+
+
+INSERT INTO `husband` (`id`,`name`,`birthday`,`dayavoided`,`note`,`id_branch`,`id_account`) VALUES
+(NULL,'NGUYỄN VĂN HƯNG',NULL,'2019-6-27','Mộ tại Vân Quật tư điền',1,1),
+(NULL,'NGUYỄN VĂN TỘC',NULL,'2019-9-23','Mộ tại Vân Quật tư điền',2,2),
+(NULL,'NGUYỄN VĂN LƯỚNG',NULL,'2019-8-22','Con trưởng ông Tài, mộ tại Quảng Đại tư thổ',3,3),
+(NULL,'NGUYỄN VĂN LỪNG',NULL,'2019-5-26','Con thứ hai của ông Tài, mộ tại Quảng Đại công điền',4,4),
+(NULL,'NGUYỄN VĂN SU',NULL,'2019-6-2','Con trưởng của Ông Lực, mộ tại Quảng Đại công điền',5,5),
+(NULL,'NGUYỄN VĂN KHOA',NULL,'2019-7-27','Con thứ hai của Ông Lực, mộ tại Quảng Đại công điền',5,6),
+(NULL,'NGUYỄN VĂN PHÚC',NULL,'2019-1-14','Con thứ ba đời nhỏ của Ông Lực, mộ tại Quảng Đại',5,NULL),
+(NULL,'NGUYỄN VĂN LÂM',NULL,'2019-6-16','Con trưởng Ông Lượng, mộ tại Quảng Đại',6,NULL),
+(NULL,'NGUYỄN VĂN CHỨA',NULL,'2019-7-4','Con thứ 4 của Ông Lượng, mộ tại Quảng Đại. Có cuốn gia phả ghi ông THƯ',6,NULL),
+(NULL,'NGUYỄN VĂN ĐẠI',NULL,'2019-8-21','Con thứ hai của Ông Sức, mộ tại Quảng Đại',7,NULL),
+(NULL,'NGUYỄN VĂN ĐÚNG',NULL,'2019-1-29','Con thứ hai của Ông Sức, mộ tại Quảng Đại',7,NULL),
+(NULL,'NGUYỄN VĂN THU',NULL,'2019-3-17','Con thứ tư ông Khỏe, mộ tại Quảng Đại công điền',7,NULL),
+(NULL,'NGUYỄN VĂN TRUNG',NULL,'2019-1-5','Con thứ năm của ông Khỏe, mộ tại Quảng Đại',7,NULL),
+(NULL,'NGUYỄN VĂN TỬ',NULL,'2019-8-5','Con thứ nhất của ông Phiên, mộ tại Quảng Đại',7,NULL),
+(NULL,'NGUYỄN VĂN ĐẠI',NULL,'2019-8-25','Con thứ ba đời nhỏ của Ông Phiên, mộ tại Quảng Đại. Thuộc chi đàng Ông Quế',7,NULL),
+(NULL,'NGUYỄN VĂN LONG',NULL,'2019-12-29','Con thứ tư đời nhỏ của Ông Phiên, mộ tại Quảng Đại',7,NULL),
+(NULL,'NGUYỄN VĂN THÂN',NULL,'2019-1-28','Con trưởng của ông Chư, mộ tại Muông Hạ',8,NULL);
+
+
+
 
 --
 -- dữ liệu bảng wife
@@ -277,8 +298,8 @@ INSERT INTO `children` (`id`,`name`,`id_user_dady`,`id_user_information`,`sex`,`
 (NULL,'NGUYỄN THỊ LIÊM',9,-1,0,'');
 ;
 
-INSERT INTO `tintuc`(`tieude`, `tomtat`, `anhgioithieu`, `noidung`) 
-VALUES 
+INSERT INTO `tintuc`(`tieude`, `tomtat`, `anhgioithieu`, `noidung`)
+VALUES
 ('Chủ tịch Hội đồng họ Nguyễn Việt Nam Nguyễn Văn Đoan người giương cao ngọn cờ đoàn kết, kết nối dòng tộc','Chủ tịch Hội đồng họ Nguyễn Việt Nam Nguyễn Văn Đoan nguyên là lãnh đạo cao cấp của Chính phủ nước Cộng hòa xã hội chủ nghĩa Việt Nam','/public/img/news1.jpg','                                <p dir="ltr" style="text-align:justify"><span style="font-size:16px">Chủ tịch Hội đồng họ Nguyễn Việt Nam Nguyễn Văn Đoan nguyên là lãnh đạo cao cấp của Chính phủ nước Cộng hòa xã hội chủ nghĩa Việt Nam, một vị lãnh đạo tài giỏi, có ý chí vững vàng, kiên định, phấn đấu hết mình cho đất nước, sau khi nghỉ hưu ông&nbsp;đã dành cả tâm sức, trí tuệ, tiền bạc cho cho sự kết nối và phát triển của dòng tộc.</span></p>
 
                                 <p dir="ltr" style="text-align:justify"><span style="font-size:16px">Ngay từ những năm đầu thế kỷ 21, khi đang là Thứ trưởng Thường trực Bộ Kế hoạch và Đầu tư – Đại biểu Quốc hội nước Cộng hòa xã hội chủ nghĩa Việt Nam khóa XII –và kiêm nhiệm nhiều chức vụ khác trong Chính phủ: Phó chủ tịch phân Ban hợp tác Việt Nam – Lào - Ủy viên Hội đồng Quản lý Ngân hàng Phát triển Việt Nam – Thành viên Ban chỉ đạo nhà nước về Du lịch – Giữa bộn bề công việc Chủ tịch Nguyễn Văn Đoan vẫn trăn trở tìm hiểu về dòng họ, ước nguyện kết nối&nbsp;bà con họ Nguyễn trên cả nước hướng về cội nguồn, đoàn kết, chung vai góp sức xây dựng và phát triển dòng họ.&nbsp;</span></p>
