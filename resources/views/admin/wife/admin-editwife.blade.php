@@ -11,15 +11,15 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="name">Họ và tên</label>
-                    <input type="text" class="form-control" placeholder="họ và tên" id="name">
+                    <input type="text" class="form-control" placeholder="{{$datawife->name}}" id="name">
                   </div>
                 </div>
                 <!--  col-md-6   -->
           
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="dayavoided">Ngày mất</label>
-                        <input type="text" class="form-control" placeholder="ngày mất" id="dayavoided">
+                        <label for="dayavoided">Ngày Kỵ</label>
+                        <input type="date" class="form-control" placeholder="{{$datawife->dayavoided}}" id="dayavoided">
                       </div>
                 </div>
                 <!--  col-md-6   -->
@@ -29,9 +29,12 @@
           
                       <div class="form-group">
                         <label for="nhánh">Chồng</label>
-                        <select name="" class="form-control" id="nhánh">
-                          <option value="">NGUYỄN VĂN HƯNG</option>
-                          <option value="">NGUYỄN VĂN TỘC</option>
+                        <select name="husband" class="form-control" id="husband">
+                          <option value="{{$datahusband->id}}">{{$datahusband->name}}</option>
+                          
+                          @foreach($datalisthusband as $item)
+                          <option value="{{$item->id}}">{{$item->name}}</option>
+                          @endforeach
                         </select>
                       </div>
                     </div>
@@ -44,7 +47,7 @@
                   <div class="col-md-12">
                     <div class="form-group">
                       <label for="note">Mô tả</label>
-                      <textarea name="" placeholder="mô tả" id="note" cols="20" rows="3" class="form-control"></textarea>
+                      <textarea name="" placeholder="{{$datawife->note}}" id="note" cols="20" rows="3" class="form-control"></textarea>
                     </div>
             
             
