@@ -27,7 +27,7 @@
                       <div style="display:flex;flex-direction:column">
   
                          <div style="display:flex;align-items: center;padding:5px"><a href="/admin/showeditwife/{{$item->id}}" style="color:black;text-decoration: none;"><i class="fa fa-edit" style="padding: 5px"></i><span>Sửa thông tin</span></a></div>
-                         <div style="display:flex;align-items: center;padding:5px"> <i class="fa fa-trash" style="padding: 5px"></i><span>Xóa </span></div>
+                         <div style="display:flex;align-items: center;padding:5px"><a href="/admin/deletewife/{{$item->id}}" style="color:black;text-decoration: none;"><i class="fa fa-trash" style="padding: 5px"></i><span>Xóa </span></div>
                         </div>
                      
                     </td>

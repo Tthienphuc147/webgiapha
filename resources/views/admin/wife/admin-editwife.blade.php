@@ -5,13 +5,14 @@
  
     <div class="content">
       <div class="container">
-          <form>
-           
+        <form action="/admin/editwife" method="POST" enctype="multipart/form-data">
+            @csrf
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="name">Họ và tên</label>
-                    <input type="text" class="form-control" placeholder="{{$datawife->name}}" id="name">
+                    <input type="text" class="form-control" placeholder="{{$datawife->name}}" name="name">
+                  <input type="text" class="form-control"  name="id_wife" value="{{$datawife->id}}" hidden="true">
                   </div>
                 </div>
                 <!--  col-md-6   -->
@@ -19,7 +20,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="dayavoided">Ngày Kỵ</label>
-                        <input type="date" class="form-control" placeholder="{{$datawife->dayavoided}}" id="dayavoided">
+                        <input type="date" class="form-control" placeholder="{{$datawife->dayavoided}}" name="dayavoided">
                       </div>
                 </div>
                 <!--  col-md-6   -->
@@ -29,12 +30,9 @@
           
                       <div class="form-group">
                         <label for="nhánh">Chồng</label>
-                        <select name="husband" class="form-control" id="husband">
+                        <select name="husband" class="form-control" name="husband">
                           <option value="{{$datahusband->id}}">{{$datahusband->name}}</option>
                           
-                          @foreach($datalisthusband as $item)
-                          <option value="{{$item->id}}">{{$item->name}}</option>
-                          @endforeach
                         </select>
                       </div>
                     </div>
@@ -47,7 +45,7 @@
                   <div class="col-md-12">
                     <div class="form-group">
                       <label for="note">Mô tả</label>
-                      <textarea name="" placeholder="{{$datawife->note}}" id="note" cols="20" rows="3" class="form-control"></textarea>
+                      <textarea name="note" placeholder="{{$datawife->note}}" id="note" cols="20" rows="3" class="form-control"></textarea>
                     </div>
             
             

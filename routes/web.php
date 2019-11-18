@@ -36,6 +36,9 @@ Route::get('/admin/showedithusband','AdminHusbandController@showEditHusband');
 Route::get('/admin/quanlywife/','AdminWifeController@showDanhSach');
 Route::get('/admin/showaddwife','AdminWifeController@showAddWife');
 Route::get('/admin/showeditwife/{id}','AdminWifeController@showEditWife');
+Route::post('/admin/editwife','AdminWifeController@editWife');
+Route::post('/admin/addwife','AdminWifeController@addWife');
+Route::get('/admin/deletewife/{id}','AdminWifeController@deleteWife');
 /*children*/
 Route::get('/admin/quanlychild','AdminChildController@showDanhSach');
 Route::get('/admin/showaddchild','AdminChildController@showAddChild');

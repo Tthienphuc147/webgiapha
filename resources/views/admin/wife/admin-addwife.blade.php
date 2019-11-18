@@ -5,23 +5,19 @@
  
     <div class="content">
       <div class="container">
-          <form>
+        <form action="/admin/addwife" method="POST" enctype="multipart/form-data">
+          @csrf
            
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="name">Họ và tên</label>
-                    <input type="text" class="form-control" placeholder="họ và tên" id="name">
+                    <input type="text" class="form-control" placeholder="họ và tên" name="name">
                   </div>
                 </div>
                 <!--  col-md-6   -->
           
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="birthday">Ngày sinh</label>
-                    <input type="text" class="form-control" placeholder="ngày sinh" id="birthday">
-                  </div>
-                </div>
+                
                 <!--  col-md-6   -->
               </div>
           
@@ -30,7 +26,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="dayavoided">Ngày mất</label>
-                    <input type="text" class="form-control" placeholder="ngày mất" id="dayavoided">
+                    <input type="date" class="form-control" placeholder="ngày mất" name="dayavoided">
                   </div>
           
           
@@ -40,10 +36,11 @@
                 <div class="col-md-6">
           
                   <div class="form-group">
-                    <label for="nhánh">Nhánh</label>
-                    <select name="" class="form-control" id="nhánh">
-                      <option value="">1</option>
-                      <option value="">2</option>
+                    <label for="chồng">Chồng</label>
+                    <select name="husband" class="form-control" id="Chồng">
+                      @foreach ($datahusband as $item)
+                    <option value="{{$item->id}}">{{$item->name}}</option>    
+                      @endforeach
                     </select>
                   </div>
                 </div>
@@ -54,7 +51,7 @@
                   <div class="col-md-12">
                     <div class="form-group">
                       <label for="note">Mô tả</label>
-                      <textarea name="" placeholder="mô tả" id="note" cols="20" rows="3" class="form-control"></textarea>
+                      <textarea name="note" placeholder="mô tả" id="note" cols="20" rows="3" class="form-control"></textarea>
                     </div>
             
             
@@ -62,25 +59,6 @@
 
                 </div>
           
-              <div class="row">
-                <div class="col-md-6">
-          
-                  <div class="form-group">
-                    <label for="email">Tài khoản</label>
-                    <input type="email" class="form-control" id="email" placeholder="tài khoản">
-                  </div>
-                </div>
-                <!--  col-md-6   -->
-          
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="password">Mật khẩu</label>
-                    <input type="password" class="form-control" id="url" placeholder="mật khẩu">
-                  </div>
-          
-                </div>
-                <!--  col-md-6   -->
-              </div>
               <!--  row   -->
           
   {{--         

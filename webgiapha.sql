@@ -76,8 +76,8 @@ DROP TABLE IF EXISTS `wife`;
 CREATE TABLE `wife` (
   `id` int(11) NOT NULL,
   `name` varchar(200) NOT NULL,
-  `dayavoided` date NOT NULL,
-  `note` text NOT NULL,
+  `dayavoided` date,
+  `note` text,
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

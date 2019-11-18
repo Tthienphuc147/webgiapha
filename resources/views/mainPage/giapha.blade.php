@@ -39,13 +39,15 @@
                            
                             <li class="tree-parent">
                                     <a href="#"  style="min-height:100px;">
-                                            
-                                    <p class="main-name">{{$husband[0]->name}}</p>
+                                        @foreach ($husband as $key=>$item)
+                                    <p class="main-name">{{$item->name}}</p>
+                                        @endforeach
+                                        @foreach ($arrwife as $key=>$item)
                             
                                     <p class="main-name">VỢ:{{$arrwife[0]->name}} kỵ:
                                        {{ date_format(date_create($arrwife[0]->dayavoided),'d').'-'.date_format(date_create($arrwife[0]->dayavoided),'m') }} 
                                    </p>                   
-                                        
+                                        @endforeach
                                         <div class="listchildren">
                                                 <hr>
                                                 @foreach ($listchildren1 as $key=>$child)   
