@@ -25,6 +25,7 @@
     </a>
     <div class="logo">
       QUẢN LÝ TỘC NGUYỄN VĂN
+
     </div>
   </div>
   <div class="sidebar">
@@ -33,17 +34,17 @@
         Quản lý tin tức</span></a> </li>
       <li><a href="/admin/giapha"><i class="fa fa-users"></i><span>Quản lý gia phả</span></a></li>
       <li><a href="#"><i class="fa fa-user-secret"></i><span>Quản lý tài khoản</span></a></li>
-      <li><a href="#"><i class="fa fa-sign-out"></i><span>Đăng xuất</span></a></li>
+      <li><a href="/logout"><i class="fa fa-sign-out"></i><span>Đăng xuất</span></a></li>
   </div>
-  
+
   <!-- Content -->
   <div class="main">
     <div class="hipsum">
-     
+
       @yield('content')
     </div>
   </div>
-  
+
 
 
 

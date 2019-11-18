@@ -17,7 +17,8 @@ Route::get('/post', 'HomeController@showSinglePost');
 Route::get('/login', 'HomeController@showLogin');
 Route::get('/giapha/{id}', 'GiaPhaController@showGiaPha');
 route::get('/noidung/{id}','noidungcontroller@shownoidung');
-
+route::post('/loginAuth','AccountController@LoginAuth');
+route::get('/logout','AccountController@Logout');
 /*Admin*/
 Route::get('/admin','AdminHomeController@showHome');
 Route::get('/admin/giapha','AdminQuanLyGiaPhaController@show');

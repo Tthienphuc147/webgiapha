@@ -23,15 +23,27 @@
                     <div class="login-content bg-white p-30 box-shadow">
                         <!-- Section Title -->
                         <div class="section-heading">
-                            <h5>TỘC TRƯƠNG VĂN</h5>
+                            <h5>TỘC NGUYỄN VĂN</h5>
                         </div>
+                        {{-- <div
+                            @if ($errors>0)
+                            {{class="alert alert-danger text-center"}}
+                        @endif>
+                        @foreach ($errors->all() as $err)
+                            <strong>{{$err}}</strong>
+                        @endforeach
+                        </div> --}}
 
-                        <form action="index.html" method="post">
+
+
+                        <form action="/loginAuth" method="post">
+                            @csrf
+
                             <div class="form-group">
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Tài khoản">
+                                <input type="text" name="username" class="form-control" id="exampleInputEmail1" placeholder="Tài khoản">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mật khẩu">
+                                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Mật khẩu">
                             </div>
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox mr-sm-2">
