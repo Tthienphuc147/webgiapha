@@ -24,6 +24,11 @@ Route::get('/admin','AdminHomeController@showHome');
 Route::get('/admin/giapha','AdminQuanLyGiaPhaController@show');
 /*Tintuc*/
 Route::get('/admin/quanlytintuc','AdminTinTucController@showDanhSach');
+route::get('/admin/quanlytintuc/xoa/978623523742{id}78263472354761', 'AdminTinTucController@deleteNews');
+route::get('/admin/quanlytintuc/showEdit/978623523742{id}78263472354761', 'AdminTinTucController@showEditNews');
+route::post('/admin/quanlytintuc/add', 'AdminTinTucController@insertNews');
+route::post('/admin/quanlytintuc/edit', 'AdminTinTucController@editNews');
+route::get('/admin/quanlytintuc/showAdd', 'AdminTinTucController@showAddNews');
 /*branch*/
 Route::get('/admin/quanlybranch','AdminBranchController@showDanhSach');
 Route::get('/admin/showaddbranch','AdminBranchController@showAddBranch');

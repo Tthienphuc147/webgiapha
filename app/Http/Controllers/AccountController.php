@@ -31,8 +31,7 @@ class AccountController extends Controller
                     $request->session()->put('namelogin', $item->username);
                     $request->session()->put('name',$item->name);
                     $request->session()->put('role', $item->role);
-                    //var_dump($data);
-                     return redirect('/admin');
+                    return redirect('/admin');
                     $success=true;
                     break;
                 }
