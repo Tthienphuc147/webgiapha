@@ -14,7 +14,15 @@ class AdminTinTucController extends Controller
     }
     public function showAddNews()
     {
-        return view('admin.tintuc.admin-addtintuc');
+        if ($request->session()->has('id') && $request->session()->get('role') == 'admin'){
+            return view('admin.tintuc.admin-addtintuc');
+        }
+        else if($request->session()->has('id') && $request->session()->get('role') == 'user'){
+            return redirect('/admin/quanlytintuc');
+        } else {
+            return view('mainPage.login');
+        }
+
     }
     public function deleteNews($idtintuc, Request $request)
     {
